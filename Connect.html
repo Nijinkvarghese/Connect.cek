@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect.cek - Welcome Page</title>
+  <style>
+    /* Add your CSS styles here */
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: #0077b5;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      color: #0077b5;
+    }
+
+    /* Content Styles */
+    .content {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Button Styles */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0077b5;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #005f88;
+    }
+
+    /* Form Styles */
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      width: auto;
+      background-color: #0077b5;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005f88;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Hide the "Are you...?" tabs by default */
+    #alumni-tab,
+    #student-tab,
+    #faculty-tab {
+      display: none;
+    }
+
+    /* Tabs Styles */
+    .tabs {
+      margin-top: 20px;
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0077b5;
+      color: #fff;
+      border-radius: 5px 5px 0 0;
+      cursor: pointer;
+    }
+
+    .tab:hover {
+      background-color: #005f88;
+    }
+
+    .tab.active {
+      background-color: #005f88;
+    }
+
+    /* Tab Content Styles */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="container">
+      <h1>Connect.cek</h1>
+    </div>
+  </div>
+
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h2>Welcome to Connect.cek</h2>
+    <p>A job portal connecting alumni, students, and faculties within College of Engineering Karunagappally</p>
+
+    <div class="tabs">
+      <div class="tab active" data-content="login">Login</div>
+      <div class="tab" data-content="signup">Signup</div>
+    </div>
+
+    <div class="tab-content active" id="login">
+      <h3>Login</h3>
+      <form>
+        <label for="email">Email/Phone:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Log In">
+      </form>
+      <p class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </p>
+    </div>
+    <div class="tab-content" id="signup">
+      <h3>Signup</h3>
+      <div class="tabs" id="are-you-tabs">
+        <div class="tab" data-content="alumni-tab">Alumni</div>
+        <div class="tab" data-content="student-tab">Student</div>
+        <div class="tab" data-content="faculty-tab">Faculty</div>
+      </div>
+      <div class="tab-content" id="alumni-tab">
+        <!-- Alumni Signup Form Goes Here -->
+        <h3>Alumni Signup</h3>
+        <form>
+          <!-- Alumni Signup Form Fields -->
+        </form>
+      </div>
+      <div class="tab-content" id="student-tab">
+        <!-- Student Signup Form Goes Here -->
+        <h3>Student Signup</h3>
+        <form>
+          <!-- Student Signup Form Fields -->
+        </form>
+      </div>
+      <div class="tab-content" id="faculty-tab">
+        <!-- Faculty Signup Form Goes Here -->
+        <h3>Faculty Signup</h3>
+        <form>
+          <!-- Faculty Signup Form Fields -->
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code for handling tabs
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-content');
+        tabContents.forEach(tabContent => {
+          if (tabContent.id === target) {
+            tabContent.classList.add('active');
+          } else {
+            tabContent.classList.remove('active');
+          }
+        });
+        tabs.forEach(t => {
+          if (t === tab) {
+            t.classList.add('active');
+          } else {
+            t.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
