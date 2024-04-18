@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connect.cek - Welcome Page</title>
   <style>
-    
     /* Add your CSS styles here */
     /* Show active tab content */
     .tab-content.active {
@@ -209,9 +208,7 @@
 
     <div class="content">
       <h2>Welcome to Connect.cek</h2>
-      <p>Connect.cek is a comprehensive job portal designed to foster connections within the College of Engineering Karunagappally (CEK) community. Our platform serves as a bridge, linking alumni, current students, and esteemed faculty members of CEK.
-
-      </p>
+      <p>A job portal connecting alumni, students, and faculties within College of Engineering Karunagappally</p>
 
       <div class="tabs">
         <div class="tab active" data-content="login">Login</div>
@@ -330,6 +327,50 @@
           // Show error message to the user
           console.error(errorMessage);
         });
+    });
+
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-content');
+        tabContents.forEach(tabContent => {
+          if (tabContent.id === target) {
+            tabContent.classList.add('active');
+          } else {
+            tabContent.classList.remove('active');
+          }
+        });
+        tabs.forEach(t => {
+          if (t === tab) {
+            t.classList.add('active');
+          } else {
+            t.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // Function to show the signup content when the respective tab is clicked
+    document.querySelectorAll('.tab[data-content]').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-content');
+        document.querySelectorAll('.tab-content').forEach(tabContent => {
+          if (tabContent.id === target) {
+            tabContent.classList.add('active');
+          } else {
+            tabContent.classList.remove('active');
+          }
+        });
+        document.querySelectorAll('.tab').forEach(t => {
+          if (t === tab) {
+            t.classList.add('active');
+          } else {
+            t.classList.remove('active');
+          }
+        });
+      });
     });
   </script>
 
