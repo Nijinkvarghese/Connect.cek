@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,9 @@
   <style>
     /* Add your CSS styles here */
     /* Show active tab content */
-.tab-content.active {
-  display: block;
-}
+    .tab-content.active {
+      display: block;
+    }
 
     /* General Styles */
     body {
@@ -18,7 +19,8 @@
       background-color: #f5f5f5;
       color: #333;
     }
-    .headapp{
+
+    .headapp {
       text-decoration: none;
     }
 
@@ -184,173 +186,150 @@
     }
   </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="header">
-          <div class="container">
-            <h1>Connect.cek</h1>
-          </div>
+  <div class="container">
+    <div class="header">
+      <div class="container">
+        <h1>Connect.cek</h1>
+      </div>
+    </div>
+
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="sample.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="content">
+      <h2>Welcome to Connect.cek</h2>
+      <p>A job portal connecting alumni, students, and faculties within College of Engineering Karunagappally</p>
+
+      <div class="tabs">
+        <div class="tab active" data-content="login">Login</div>
+        <div class="tab" data-content="signup">Signup</div>
+      </div>
+
+      <div class="tab-content active" id="login">
+        <h3>Login</h3>
+        <form id="loginForm">
+          <label for="email">Email/Phone:</label>
+          <input type="email" id="loginEmail" name="email" required><br>
+          <label for="password">Password:</label>
+          <input type="password" id="loginPassword" name="password" required><br>
+          <input type="submit" value="Log In">
+        </form>
+        <p class="forgot-password">
+          <a href="#">Forgot Password?</a>
+        </p>
+      </div>
+      <div class="tab-content" id="signup">
+        <h3>Signup</h3>
+        <div class="tabs" id="are-you-tabs">
+          <div class="tab" data-content="alumni-tab"> <a class="headapp" href="alumini-form.html"> Alumni</a></div>
+          <div class="tab" data-content="student-tab"><a class="headapp" href="student-form.html">Student</a></div>
+          <div class="tab" data-content="faculty-tab"><a class="headapp" href="fa-form.html">Faculty</a></div>
         </div>
-      
-        <nav>
-          <div class="container">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#"></a></li>
-            </ul>
-          </div>
-        </nav>
-      
-        <div class="content">
-          <h2>Welcome to Connect.cek</h2>
-          <p>A job portal connecting alumni, students, and faculties within College of Engineering Karunagappally</p>
-      
-          <div class="tabs">
-            <div class="tab active" data-content="login">Login</div>
-            <div class="tab" data-content="signup">Signup</div>
-          </div>
-      
-          <div class="tab-content active" id="login">
-            <h3>Login</h3>
-            <form>
-              <label for="email">Email/Phone:</label>
-              <input type="email" id="email" name="email" required><br>
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" required><br>
-              <input type="submit" value="Log In">
-            </form>
-            <p class="forgot-password">
-              <a href="#">Forgot Password?</a>
-            </p>
-          </div>
-          <div class="tab-content" id="signup">
-            <h3>Signup</h3>
-            <div class="tabs" id="are-you-tabs">
-              <div class="tab" data-content="alumni-tab"> <a class="headapp" href="alumini-form.html"> Alumni</a></div>
-              <div class="tab" data-content="student-tab"><a  class="headapp"  href="student-form.html">Student</a></div>
-              <div class="tab" data-content="faculty-tab"><a  class="headapp" href="fa-form.html">Faculty</a></div>
-            </div>
-            <div class="tab-content active" id="alumni-tab">
-              <!-- Alumni Signup Form Goes Here -->
-              <h3>Alumni Signup</h3>
-              <form>
-                <!-- Alumni Signup Form Fields -->
-                <label for="alumni-name">Full Name:</label>
-                <input type="text" id="alumni-name" name="alumni-name" required><br>
-                <label for="alumni-email">Email:</label>
-                <input type="email" id="alumni-email" name="alumni-email" required><br>
-                <label for="alumni-password">Password:</label>
-                <input type="password" id="alumni-password" name="alumni-password" required><br>
-                <input type="submit" value="Sign Up">
-              </form>
-            </div>
-            <div class="tab-content" id="student-tab">
-              <!-- Student Signup Form Goes Here -->
-              <h3>Student Signup</h3>
-              <form>
-                <!-- Student Signup Form Fields -->
-                <label for="student-name">Full Name:</label>
-                <input type="text" id="student-name" name="student-name" required><br>
-                <label for="student-email">Email:</label>
-                <input type="email" id="student-email" name="student-email" required><br>
-                <label for="student-password">Password:</label>
-                <input type="password" id="student-password" name="student-password" required><br>
-                <input type="submit" value="Sign Up">
-              </form>
-            </div>
-          </div>
-          <div class="tab-content" id="faculty-tab">
-            <!-- Faculty Signup Form Goes Here -->
-            <h3>Faculty Signup</h3>
-            <form>
-              <!-- Faculty Signup Form Fields -->
-              <label for="faculty-name">Full Name:</label>
-              <input type="text" id="faculty-name" name="faculty-name" required><br>
-              <label for="faculty-email">Email:</label>
-              <input type="email" id="faculty-email" name="faculty-email" required><br>
-              <label for="faculty-password">Password:</label>
-              <input type="password" id="faculty-password" name="faculty-password" required><br>
-              <label for="faculty-department">Department:</label>
-              <input type="text" id="faculty-department" name="faculty-department" required><br>
-              <input type="submit" value="Sign Up">
-            </form>
-          </div>        
+        <div class="tab-content active" id="alumni-tab">
+          <!-- Alumni Signup Form Goes Here -->
+          <h3>Alumni Signup</h3>
+          <form>
+            <!-- Alumni Signup Form Fields -->
+            <label for="alumni-name">Full Name:</label>
+            <input type="text" id="alumni-name" name="alumni-name" required><br>
+            <label for="alumni-email">Email:</label>
+            <input type="email" id="alumni-email" name="alumni-email" required><br>
+            <label for="alumni-password">Password:</label>
+            <input type="password" id="alumni-password" name="alumni-password" required><br>
+            <input type="submit" value="Sign Up">
+          </form>
+        </div>
+        <div class="tab-content" id="student-tab">
+          <!-- Student Signup Form Goes Here -->
+          <h3>Student Signup</h3>
+          <form>
+            <!-- Student Signup Form Fields -->
+            <label for="student-name">Full Name:</label>
+            <input type="text" id="student-name" name="student-name" required><br>
+            <label for="student-email">Email:</label>
+            <input type="email" id="student-email" name="student-email" required><br>
+            <label for="student-password">Password:</label>
+            <input type="password" id="student-password" name="student-password" required><br>
+            <input type="submit" value="Sign Up">
+          </form>
         </div>
       </div>
-      
+      <div class="tab-content" id="faculty-tab">
+        <!-- Faculty Signup Form Goes Here -->
+        <h3>Faculty Signup</h3>
+        <form>
+          <!-- Faculty Signup Form Fields -->
+          <label for="faculty-name">Full Name:</label>
+          <input type="text" id="faculty-name" name="faculty-name" required><br>
+          <label for="faculty-email">Email:</label>
+          <input type="email" id="faculty-email" name="faculty-email" required><br>
+          <label for="faculty-password">Password:</label>
+          <input type="password" id="faculty-password" name="faculty-password" required><br>
+          <label for="faculty-department">Department:</label>
+          <input type="text" id="faculty-department" name="faculty-department" required><br>
+          <input type="submit" value="Sign Up">
+        </form>
+      </div>
+    </div>
+  </div>
 
-      <script type="module">
-        // JavaScript code for handling tabs
-        const tabs = document.querySelectorAll('.tab');
-        const tabContents = document.querySelectorAll('.tab-content');
-      
-        tabs.forEach(tab => {
-          tab.addEventListener('click', () => {
-            const target = tab.getAttribute('data-content');
-            tabContents.forEach(tabContent => {
-              if (tabContent.id === target) {
-                tabContent.classList.add('active');
-              } else {
-                tabContent.classList.remove('active');
-              }
-            });
-            tabs.forEach(t => {
-              if (t === tab) {
-                t.classList.add('active');
-              } else {
-                t.classList.remove('active');
-              }
-            });
-          });
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+
+  <script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCcqUzqkLvdfdCDAgYe6ugpom5Z3ULfMco",
+      authDomain: "connect-cek.firebaseapp.com",
+      projectId: "connect-cek",
+      storageBucket: "connect-cek.appspot.com",
+      messagingSenderId: "21447682775",
+      appId: "1:21447682775:web:a280e1e65d64b1b8a69e92",
+      measurementId: "G-T09DQQLT9P"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+
+    // Get elements
+    const loginForm = document.getElementById('loginForm');
+
+    // Add login event
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Get user info
+      const email = loginForm['loginEmail'].value;
+      const password = loginForm['loginPassword'].value;
+
+      // Sign in
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // Redirect to the dashboard or any other page after successful login
+          window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // Show error message to the user
+          console.error(errorMessage);
         });
-      
-        // Function to show the signup content when the respective tab is clicked
-document.querySelectorAll('.tab[data-content]').forEach(tab => {
-  tab.addEventListener('click', () => {
-    const target = tab.getAttribute('data-content');
-    document.querySelectorAll('.tab-content').forEach(tabContent => {
-      if (tabContent.id === target) {
-        tabContent.classList.add('active');
-      } else {
-        tabContent.classList.remove('active');
-      }
     });
-    document.querySelectorAll('.tab').forEach(t => {
-      if (t === tab) {
-        t.classList.add('active');
-      } else {
-        t.classList.remove('active');
-      }
-    });
-  });
-});
+  </script>
 
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCcqUzqkLvdfdCDAgYe6ugpom5Z3ULfMco",
-    authDomain: "connect-cek.firebaseapp.com",
-    projectId: "connect-cek",
-    storageBucket: "connect-cek.appspot.com",
-    messagingSenderId: "21447682775",
-    appId: "1:21447682775:web:a280e1e65d64b1b8a69e92",
-    measurementId: "G-T09DQQLT9P"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-
-
-       </script>
-      
 </body>
+
 </html>
