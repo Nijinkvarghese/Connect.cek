@@ -1,67 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aluminform</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aluminform</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <body>
+
+  <body>
+    <div class="container">
+      <div class="header">
         <div class="container">
-            <div class="header">
-              <div class="container">
-                <h1>Connect.cek</h1>
-              </div>
-            </div>
-          
-            <nav>
-              <div class="container">
-                <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#"></a></li>
-                </ul>
-              </div>
-            </nav>
-          
-            <div class="content">
-              <h2>Welcome to Connect.cek</h2>
-              <p>A job portal connecting alumni, students, and faculties within College of Engineering Karunagappally</p>
-          
-              <div class="tabs">
-                <div class="tab " data-content="login">Login</div>
-                <div class="tab active" data-content="signup">Signup</div>
-              </div>
-          
-              <div class="tab-content " id="login">
-                <h3>Login</h3>
-             
-              </div>
-              <div class="tab-content active" id="signup">
-                <h3>Signup</h3>
-               
-                    <div class="tabs headapp" id="are-you-tabs">
-                      <div class="tab" data-content="alumni-tab"> <a href="alumini-form.html"> Alumni</a></div>
-                      <div class="tab" data-content="student-tab"><a href="student-form.html">Student</a></div>
-                      <div class="tab" data-content="faculty-tab"><a href="fa-form.html">Faculty</a></div>
-                    </div> 
-                
-    <div class="tab-content active" id="alumni-tab">
-        <!-- Alumni Signup Form Goes Here -->
-        <h3>Alumni Signup</h3>
-        <form>
-          <!-- Alumni Signup Form Fields -->
-          <label for="alumni-name">Full Name:</label>
-          <input type="text" id="alumni-name" name="alumni-name" required><br>
-          <label for="alumni-email">College Email:</label>
-          <input type="email" id="alumni-email" name="alumni-email" required><br>
-          <label for="alumni-password">Password:</label>
-          <input type="password" id="alumni-password" name="alumni-password" required><br>
-          <input type="submit" value="Sign Up">
-        </form>
+          <h1>Connect.cek</h1>
+        </div>
       </div>
-    </div>
-</body>
+
+      <nav>
+        <div class="container">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="content">
+        <h2>Welcome to Connect.cek</h2>
+        <p>A job portal connecting alumni, students, and faculties within College of Engineering Karunagappally</p>
+
+        <div class="tabs">
+          <div class="tab " data-content="login">Login</div>
+          <div class="tab active" data-content="signup">Signup</div>
+        </div>
+
+        <div class="tab-content " id="login">
+          <h3>Login</h3>
+
+        </div>
+        <div class="tab-content active" id="signup">
+          <h3>Signup</h3>
+
+          <div class="tabs headapp" id="are-you-tabs">
+            <div class="tab" data-content="alumni-tab"> <a href="alumini-form.html"> Alumni</a></div>
+            <div class="tab" data-content="student-tab"><a href="student-form.html">Student</a></div>
+            <div class="tab" data-content="faculty-tab"><a href="fa-form.html">Faculty</a></div>
+          </div>
+
+          <div class="tab-content active" id="alumni-tab">
+            <!-- Alumni Signup Form Goes Here -->
+            <h3>Alumni Signup</h3>
+            <form>
+              <!-- Alumni Signup Form Fields -->
+              <label for="alumni-name">Full Name:</label>
+              <input type="text" id="alumni-name" name="alumni-name" required><br>
+              <label for="alumni-email">College Email:</label>
+              <input type="email" id="alumni-email" name="alumni-email" required><br>
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" name="dob" required>
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxxxxxxx"
+                required>
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch" required>
+                <label for="passout-year">Passout Year:</label>
+                <select id="passout-year" name="passout-year" required>
+                  <option value="">Select Passout Year</option>
+                  <option value="2022">2010</option>
+                  <option value="2023">2011</option>
+                  <option value="2024">2012</option>
+                  <option value="2022">2013</option>
+                  <option value="2023">2014</option>
+                  <option value="2024">2015</option>
+                  <option value="2022">2016</option>
+                  <option value="2023">2017</option>
+                  <option value="2024">2018</option>
+                  <option value="2022">2019</option>
+                  <option value="2023">2020</option>
+                  <option value="2024">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+    
+                  <!-- Add more years as needed -->
+                </select>
+                <label for="linkedin-id">LinkedIn ID:</label>
+                <input type="text" id="linkedin-id" name="linkedin-id">
+                <label for="github-id">GitHub ID:</label>
+                <input type="text" id="github-id" name="github-id">
+                <label for="field-of-interest">Field of Interest:</label>
+                <textarea id="field-of-interest" name="field-of-interest" rows="4"></textarea>
+                <label for="password">Set Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+    
+              <input type="submit" value="Sign Up">
+            </form>
+          </div>
+        </div>
+  </body>
+
 </html>
