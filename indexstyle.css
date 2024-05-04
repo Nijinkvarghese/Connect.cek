@@ -1,6 +1,23 @@
-
 /* Add your CSS styles here */
 /* Show active tab content */
+h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.content {
+  border: 5px solid black;
+
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+p .content {
+  font-weight: 600;
+}
+
 .tab-content.active {
   display: block;
 }
@@ -29,6 +46,7 @@ body {
   color: #fff;
   padding: 10px 0;
   text-align: center;
+  border: 5px solid rgb(14, 5, 5);
 }
 
 .header h1 {
@@ -176,4 +194,9 @@ input[type="submit"]:hover {
 
 .tab-content.active {
   display: block;
+}
+
+.container {
+  border: 1px solid rgb(99, 9, 9);
+  border-radius: 25px;
 }
