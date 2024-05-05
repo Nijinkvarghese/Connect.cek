@@ -104,13 +104,80 @@
     </div>
   </div>
 
-  <script>
-    // Add event listener to the login tab
-    document.getElementById('login').addEventListener('click', function () {
-      // Redirect to index.html
-      window.location.href = 'index.html';
-    });
+  <!-- Include Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+
+  <script type="module">
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyCcqUzqkLvdfdCDAgYe6ugpom5Z3ULfMco",
+  authDomain: "connect-cek.firebaseapp.com",
+  databaseURL: "https://connect-cek-default-rtdb.firebaseio.com",
+  projectId: "connect-cek",
+  storageBucket: "connect-cek.appspot.com",
+  messagingSenderId: "21447682775",
+  appId: "1:21447682775:web:a280e1e65d64b1b8a69e92",
+  measurementId: "G-T09DQQLT9P"
+};
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Reference to the Firebase database
+    const database = firebase.database();
+
+    // Form submission event listener
+    document
+      .getElementById("student-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form values
+        const name = document.getElementById("student-name").value;
+        const email = document.getElementById("student-email").value;
+        const dob = document.getElementById("dob").value;
+        const phone = document.getElementById("phone").value;
+        const branch = document.getElementById("branch").value;
+        const passoutYear = document.getElementById("passout-year").value;
+        const linkedinId = document.getElementById("linkedin-id").value;
+        const githubId = document.getElementById("github-id").value;
+        const fieldOfInterest =
+          document.getElementById("field-of-interest").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+
+        // Check if passwords match
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
+        }
+
+        // Push data to Firebase database
+        database
+          .ref("users")
+          .push({
+            name: name,
+            email: email,
+            dob: dob,
+            phone: phone,
+            branch: branch,
+            passoutYear: passoutYear,
+            linkedinId: linkedinId,
+            githubId: githubId,
+            fieldOfInterest: fieldOfInterest,
+            password: password,
+          })
+          .then(() => {
+            alert("Student registered successfully!");
+            // Clear form after submission
+            document.getElementById("student-form").reset();
+          })
+          .catch((error) => {
+            console.error("Error adding student: ", error);
+          });
+      });
   </script>
 </body>
-
 </html>

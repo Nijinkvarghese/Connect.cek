@@ -105,96 +105,67 @@
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
 
-  <script>
+  <script type="module">
     // Your Firebase configuration
     const firebaseConfig = {
-      apiKey: "AIzaSyCcqUzqkLvdfdCDAgYe6ugpom5Z3ULfMco",
-      authDomain: "connect-cek.firebaseapp.com",
-      projectId: "connect-cek",
-      storageBucket: "connect-cek.appspot.com",
-      messagingSenderId: "21447682775",
-      appId: "1:21447682775:web:a280e1e65d64b1b8a69e92",
-      measurementId: "G-T09DQQLT9P"
-    };
+  apiKey: "AIzaSyCcqUzqkLvdfdCDAgYe6ugpom5Z3ULfMco",
+  authDomain: "connect-cek.firebaseapp.com",
+  databaseURL: "https://connect-cek-default-rtdb.firebaseio.com",
+  projectId: "connect-cek",
+  storageBucket: "connect-cek.appspot.com",
+  messagingSenderId: "21447682775",
+  appId: "1:21447682775:web:a280e1e65d64b1b8a69e92",
+  measurementId: "G-T09DQQLT9P"
+};
 
     // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
 
     // Get elements
-    const loginForm = document.getElementById('loginForm');
+    const loginForm = document.getElementById("loginForm");
 
     // Add login event
-    loginForm.addEventListener('submit', (e) => {
+    loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
       // Get user info
-      const email = loginForm['loginEmail'].value;
-      const password = loginForm['loginPassword'].value;
+      const email = loginForm["loginEmail"].value;
+      const password = loginForm["loginPassword"].value;
 
-      // Sign in
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          console.log(user);
-          // Redirect to the dashboard or any other page after successful login
-          window.location.href = "dashboard.html";
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // Show error message to the user
-          console.error(errorMessage);
-        });
-    });
+      // Query the Firebase Realtime Database to check if the user exists
+      firebase
+        .database()
+        .ref("users")
+        .orderByChild("email")
+        .equalTo(email)
+        .once("value", (snapshot) => {
+          const userData = snapshot.val();
 
-    const tabs = document.querySelectorAll('.tab');
-    const tabContents = document.querySelectorAll('.tab-content');
+          // Check if there is a user with the provided email
+          if (userData) {
+            // Get the user ID
+            const userId = Object.keys(userData)[0];
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-content');
-        tabContents.forEach(tabContent => {
-          if (tabContent.id === target) {
-            tabContent.classList.add('active');
+            // Check if the password matches
+            if (userData[userId].password === password) {
+              // Password matches, proceed with login
+              console.log("Login successful!");
+              // Redirect to the dashboard or any other page after successful login
+              window.location.href = "dashboard.html";
+            } else {
+              // Password does not match
+              console.error("Invalid password!");
+              // Display an error message to the user
+            }
           } else {
-            tabContent.classList.remove('active');
+            // User with the provided email does not exist
+            console.error("User not found!");
+            // Display an error message to the user
           }
         });
-        tabs.forEach(t => {
-          if (t === tab) {
-            t.classList.add('active');
-          } else {
-            t.classList.remove('active');
-          }
-        });
-      });
-    });
-
-    // Function to show the signup content when the respective tab is clicked
-    document.querySelectorAll('.tab[data-content]').forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-content');
-        document.querySelectorAll('.tab-content').forEach(tabContent => {
-          if (tabContent.id === target) {
-            tabContent.classList.add('active');
-          } else {
-            tabContent.classList.remove('active');
-          }
-        });
-        document.querySelectorAll('.tab').forEach(t => {
-          if (t === tab) {
-            t.classList.add('active');
-          } else {
-            t.classList.remove('active');
-          }
-        });
-      });
     });
   </script>
-
 </body>
-
 </html>
