@@ -1,0 +1,55 @@
+/* Styles for Contact Us section */
+#contact {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#contact h2 {
+    margin-bottom: 200px;
+    font-size: 50px;
+    color: #333;
+}
+
+/* Styles for Contact Form */
+#contactForm {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contactForm textarea {
+    height: 200px;
+}
+
+#contactForm input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#contactForm input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+

@@ -1,0 +1,35 @@
+/* About Section Styles */
+#About {
+    padding: 20px;
+  }
+  
+  #About h2 {
+    font-size: 50px;
+    color: #0077b5;
+    margin-bottom: 15px;
+  }
+  
+  #About p {
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  #About ul {
+    margin-bottom: 15px;
+  }
+  
+  #About ul li {
+    margin-bottom: 5px;
+  }
+  
+  #About h3 {
+    font-size: 30px;
+    color: #0077b5;
+    margin-bottom: 10px;
+  }
+  li {
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
