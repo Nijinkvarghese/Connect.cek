@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Home</title>
     <link rel="stylesheet" href="homestyle.css">
+    <link rel="stylesheet" href="dashhome.css">
 </head>
 <body>
     <header>
         <h1>Welcome to Your Dashboard</h1>
         <nav>
             <ul>
-                <li><a href="dashboard.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="messages.html">Messages</a></li>
-                <li><a href="logout.html">Logout</a></li>
+                <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -22,24 +24,17 @@
     <main>
         <section id="recent-posts">
             <h2>Recent Posts</h2>
-            <ul>
-                <li>
-                    <h3>Post Title 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <span>Posted by John Doe</span>
-                </li>
-                <li>
-                    <h3>Post Title 2</h3>
-                    <p>Integer vitae odio et lorem varius tristique.</p>
-                    <span>Posted by Jane Smith</span>
-                </li>
-                <!-- Add more recent posts here -->
-            </ul>
+            <div id="posts-container">
+                <!-- Posts will be dynamically added here -->
+            </div>
         </section>
     </main>
+    
 
     <footer>
         <p>&copy; 2024 Your Dashboard. All rights reserved.</p>
     </footer>
+    <script src="dashhomescript.js"></script>
+
 </body>
 </html>
