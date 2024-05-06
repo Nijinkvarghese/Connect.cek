@@ -7,7 +7,6 @@
     <title>aluminform</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <div class="container">
       <div class="header">
@@ -15,7 +14,6 @@
           <h1>Connect.cek</h1>
         </div>
       </div>
-
       <nav>
         <div class="container">
           <ul>
@@ -25,25 +23,21 @@
           </ul>
         </div>
       </nav>
-
       <div class="content">
         <h2>Welcome to Connect.cek</h2>
         <p>
           A job portal connecting alumni, students, and faculties within College
           of Engineering Karunagappally
         </p>
-
         <div class="tabs">
           <div class="tab" data-content="login" id="login">Login</div>
           <div class="tab active" data-content="signup">Signup</div>
         </div>
-
         <div class="tab-content" id="login">
           <h3>Login</h3>
         </div>
         <div class="tab-content active" id="signup">
           <h3>Signup</h3>
-
           <div class="tabs headapp" id="are-you-tabs">
             <div class="tab" data-content="alumni-tab">
               <a href="alumini-form.html"> Alumni</a>
@@ -55,10 +49,9 @@
               <a href="fa-form.html">Faculty</a>
             </div>
           </div>
-
           <div class="tab-content" id="student-tab">
             <!-- Student Signup Form Goes Here -->
-            <h3>Faculty Signup</h3>
+            <h3>Alumni Signup</h3>
             <form id="student-form">
               <!-- Student Signup Form Fields -->
               <label for="student-name">Name:</label>
@@ -133,29 +126,55 @@
         </div>
       </div>
     </div>
-
     <!-- Include Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
-
     <script type="module">
       // Your web app's Firebase configuration
       const firebaseConfig = {
-  apiKey: "AIzaSyCcqUzqkLvdfdCDAgYe6ugpom5Z3ULfMco",
-  authDomain: "connect-cek.firebaseapp.com",
-  databaseURL: "https://connect-cek-default-rtdb.firebaseio.com",
-  projectId: "connect-cek",
-  storageBucket: "connect-cek.appspot.com",
-  messagingSenderId: "21447682775",
-  appId: "1:21447682775:web:a280e1e65d64b1b8a69e92",
-  measurementId: "G-T09DQQLT9P"
-};
+        apiKey: "YOUR_API_KEY",
+        authDomain: "connect-cek.firebaseapp.com",
+        databaseURL: "https://connect-cek-default-rtdb.firebaseio.com",
+        projectId: "connect-cek",
+        storageBucket: "connect-cek.appspot.com",
+        messagingSenderId: "21447682775",
+        appId: "1:21447682775:web:a280e1e65d64b1b8a69e92",
+        measurementId: "G-T09DQQLT9P",
+      };
 
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
 
       // Reference to the Firebase database
       const database = firebase.database();
+
+      const tabs = document.querySelectorAll(".tab");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      // Add event listeners to tabs
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.getAttribute("data-content");
+          if (target === "login") {
+            window.location.href = "index.html"; // Redirect to login.html on login tab click
+          } else {
+            tabContents.forEach((tabContent) => {
+              if (tabContent.id === target) {
+                tabContent.classList.add("active");
+              } else {
+                tabContent.classList.remove("active");
+              }
+            });
+            tabs.forEach((t) => {
+              if (t === tab) {
+                t.classList.add("active");
+              } else {
+                t.classList.remove("active");
+              }
+            });
+          }
+        });
+      });
 
       // Form submission event listener
       document
@@ -183,8 +202,7 @@
             alert("Passwords do not match!");
             return;
           }
-
-          // Push data to Firebase database
+// Push data to Firebase database
           database
             .ref("users")
             .push({

@@ -1,6 +1,8 @@
 // Get elements
 const profilePhoto = document.getElementById("profilePhoto");
 const profilePhotoPreview = document.getElementById("profilePhotoPreview");
+const updateProfileForm = document.getElementById("updateProfileForm");
+const updatedProfile = document.getElementById("updatedProfile");
 
 // Add event listener for profile photo change
 profilePhoto.addEventListener("change", () => {
@@ -13,14 +15,8 @@ profilePhoto.addEventListener("change", () => {
         reader.readAsDataURL(file);
     }
 });
-// Get a reference to the Firebase authentication service
-const auth = firebase.auth();
-
-// Get the currently signed-in user
-const user = auth.currentUser;
 
 // Add event listener for form submission
-const updateProfileForm = document.getElementById("updateProfileForm");
 updateProfileForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     
@@ -37,7 +33,23 @@ updateProfileForm.addEventListener("submit", async (e) => {
         
         // Profile updated successfully
         console.log("Profile updated successfully!");
-        // You can redirect the user to another page or perform any other action here
+
+        // Display updated profile information
+        updatedProfile.innerHTML = `
+            <p>Updated Profile:</p>
+            <p>Username: ${username}</p>
+            <p>Profile Photo:</p>
+            <img src="${profilePhotoPreview.src}" alt="Profile Photo">
+            <button id="editProfileBtn">Edit Profile</button>
+        `;
+
+        // Add event listener for edit profile button
+        const editProfileBtn = document.getElementById("editProfileBtn");
+        editProfileBtn.addEventListener("click", () => {
+            // Clear the updated profile section and show the update form again
+            updatedProfile.innerHTML = "";
+            updateProfileForm.reset();
+        });
     } catch (error) {
         // Error occurred while updating profile
         console.error("Failed to update profile:", error.message);
