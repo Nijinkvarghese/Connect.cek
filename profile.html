@@ -1,54 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Update Profile</title>
-    <link rel="stylesheet" href="profile.css">
-</head>
-<body>
+    <link rel="stylesheet" href="profile.css" />
+    <style>
+      .updatedProfile {
+        text-align: center;
+      }
+
+      #userPhoto {
+        width: 100px; /* Adjust the size of the circle as needed */
+        height: 100px; /* Adjust the size of the circle as needed */
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 10px;
+      }
+
+      #userPhoto img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="dashboard.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
-                <li><a href="dashboard.html"><i class="fas fa-cog"></i> Dashboard</a></li>
-                <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
-                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="profile.html" class="active"
+              ><i class="fas fa-user"></i> Profile</a
+            >
+          </li>
+          <li>
+            <a href="dashboard.html"><i class="fas fa-cog"></i> Dashboard</a>
+          </li>
+          <li>
+            <a href="messages.html"><i class="fas fa-envelope"></i> Messages</a>
+          </li>
+          <li>
+            <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="update-profile">
-            <h2>Update Profile</h2>
-            <div class="profile-details">
-                <!-- Form to update profile -->
-                <form id="updateProfileForm">
-                    <div class="form-group">
-                        <label for="profilePhoto">Upload Photo:</label>
-                        <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
-                        <img src="" alt="Profile Photo Preview" id="profilePhotoPreview">
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    <!-- Add more fields for updating profile information -->
-                    <button type="submit">Update</button>
-                </form>
+      <section id="update-profile">
+        <h2>Update Profile</h2>
+        <div class="profile-details" id="profileDetails">
+          <!-- Form to update profile -->
+          <form id="updateProfileForm">
+            <div class="form-group">
+              <label for="profilePhoto">Upload Photo:</label>
+              <input
+                type="file"
+                id="profilePhoto"
+                name="profilePhoto"
+                accept="image/*"
+              />
+              <img
+                src=""
+                alt="Profile Photo Preview"
+                id="profilePhotoPreview"
+              />
             </div>
-            <div class="updated-profile" id="updatedProfile">
-                <!-- Display updated profile information here -->
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required />
             </div>
-        </section>
+            <!-- Add more fields for updating profile information -->
+            <button type="button" id="updateButton">Update</button>
+          </form>
+        </div>
+        <div class="updated-profile" id="updatedProfile" style="display: none">
+          <div id="userPhoto">
+            <img
+              src=""
+              alt="Updated Profile Photo"
+              id="displayedProfilePhoto"
+            />
+          </div>
+          <p>Updated Username: <span id="displayedUsername"></span></p>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Dashboard. All rights reserved.</p>
+      <p>&copy; 2024 Your Dashboard. All rights reserved.</p>
     </footer>
 
-    <script src="profile.js"></script>
-    
-</body>
+    <script>
+      const profilePhoto = document.getElementById("profilePhoto");
+      const profilePhotoPreview = document.getElementById(
+        "profilePhotoPreview"
+      );
+      const updateProfileForm = document.getElementById("updateProfileForm");
+      const updatedProfile = document.getElementById("updatedProfile");
+
+      // Add event listener for profile photo change
+      profilePhoto.addEventListener("change", () => {
+        const file = profilePhoto.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            profilePhotoPreview.src = reader.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Function to handle profile update
+      function updateProfile() {
+        // Get updated username
+        const updatedUsername = document.getElementById("username").value;
+// Display the updated username
+        document.getElementById("displayedUsername").innerText =
+          updatedUsername;
+        document.getElementById("profileDetails").style.display = "none";
+        document.getElementById("update-profile").style.display = "flex";
+        document.getElementById("update-profile").style.justifyContent =
+          "center";
+        document.getElementById("update-profile").style.textAlign = "center";
+        document.getElementById("update-profile").style.flexDirection =
+          "column";
+
+        // Get the uploaded profile picture file
+        const profilePhoto = document.getElementById("profilePhoto").files[0];
+
+        // Display the uploaded profile picture
+        if (profilePhoto) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            const profilePhotoPreview = document.getElementById(
+              "displayedProfilePhoto"
+            );
+            profilePhotoPreview.src = event.target.result;
+          };
+          reader.readAsDataURL(profilePhoto);
+        }
+
+        // Show the updated profile section
+        document.getElementById("updatedProfile").style.display = "block";
+      }
+
+      // Add event listener to the update button
+      document
+        .getElementById("updateButton")
+        .addEventListener("click", updateProfile);
+    </script>
+  </body>
 </html>
