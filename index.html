@@ -6,7 +6,6 @@
   <title>Connect.cek - Welcome Page</title>
   <link rel="stylesheet" href="indexstyle.css" />
 </head>
-
 <body>
   <div class="container">
     <div class="header">
@@ -66,7 +65,7 @@
           </div>
         </div>
 
-        <div class="tab-content active" id="alumni-tab">
+        <div class="tab-content" id="alumni-tab">
           <h3>Alumni Signup</h3>
           <form id="alumniSignupForm">
             <label for="alumniName">Full Name:</label>
@@ -123,7 +122,7 @@
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
 
   <script type="module">
     // Your Firebase configuration
@@ -161,11 +160,7 @@
           }
         });
         tabs.forEach((t) => {
-          if (t === tab) {
-            t.classList.add("active");
-          } else {
-            t.classList.remove("active");
-          }
+          t.classList.toggle("active", t === tab);
         });
       });
     });
@@ -178,53 +173,89 @@
       const email = loginForm["loginEmail"].value;
       const password = loginForm["loginPassword"].value;
 
-      // Query the Firebase Realtime Database to check if the user exists
-      firebase
-        .database()
-        .ref("users")
-        .orderByChild("email")
-        .equalTo(email)
-        .once("value", (snapshot) => {
-          const userData = snapshot.val();
+      // Log the email and password for debugging
+      console.log("Login attempt with email:", email, "and password:", password);
 
-          // Check if there is a user with the provided email
-          if (userData) {
-            // Get the user ID
-            const userId = Object.keys(userData)[0];
-
-            // Check if the password matches
-            if (userData[userId].password === password) {
-              // Password matches, proceed with login
-              console.log("Login successful!");
-              // Redirect to the dashboard or any other page after successful login
-              window.location.href = "dashhome.html";
-            } else {
-              // Password does not match
-              console.error("Invalid password!");
-              document.getElementById("loginError").textContent = "Invalid password";
-            }
-          } else {
-            // User with the provided email does not exist
-            console.error("User not found!");
-            document.getElementById("loginError").textContent = "User not found";
-          }
+      // Authenticate the user with Firebase Authentication
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Login successful
+          console.log("Login successful!");
+          // Redirect to the dashboard or any other page after successful login
+          window.location.href = "dashhome.html";
+        })
+        .catch((error) => {
+          // Log the error code and message
+          console.error("Error during login:", error.code, error.message);
+          document.getElementById("loginError").textContent = error.message;
         });
     });
 
-    // Add signup events (Placeholder logic)
+    // Add signup events
     alumniSignupForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      console.log("Alumni signup submitted!");
+
+      // Get user info
+      const email = alumniSignupForm["alumniEmail"].value;
+      const password = alumniSignupForm["alumniPassword"].value;
+
+      // Create a new user with Firebase Authentication
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Signup successful
+          console.log("Alumni signup successful!");
+          // Redirect to the dashboard or any other page after successful signup
+          window.location.href = "dashhome.html";
+        })
+        .catch((error) => {
+          // Log the error code and message
+          console.error("Error during alumni signup:", error.code, error.message);
+          document.getElementById("alumniSignupError").textContent = error.message;
+        });
     });
 
     studentSignupForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      console.log("Student signup submitted!");
+
+      // Get user info
+      const email = studentSignupForm["studentEmail"].value;
+      const password = studentSignupForm["studentPassword"].value;
+
+      // Create a new user with Firebase Authentication
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Signup successful
+          console.log("Student signup successful!");
+          // Redirect to the dashboard or any other page after successful signup
+          window.location.href = "dashhome.html";
+        })
+        .catch((error) => {
+          // Log the error code and message
+          console.error("Error during student signup:", error.code, error.message);
+          document.getElementById("studentSignupError").textContent = error.message;
+        });
     });
 
     facultySignupForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      console.log("Faculty signup submitted!");
+
+      // Get user info
+      const email = facultySignupForm["facultyEmail"].value;
+      const password = facultySignupForm["facultyPassword"].value;
+
+      // Create a new user with Firebase Authentication
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Signup successful
+          console.log("Faculty signup successful!");
+          // Redirect to the dashboard or any other page after successful signup
+          window.location.href = "dashhome.html";
+        })
+        .catch((error) => {
+          // Log the error code and message
+          console.error("Error during faculty signup:", error.code, error.message);
+          document.getElementById("facultySignupError").textContent = error.message;
+        });
     });
   </script>
 </body>
