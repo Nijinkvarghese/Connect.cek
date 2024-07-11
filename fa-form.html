@@ -1,213 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aluminform</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <div class="container">
-          <h1>Connect.cek</h1>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aluminform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="container">
+        <h1>Connect.cek</h1>
       </div>
-      <nav>
-        <div class="container">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="mainabout.html">About</a></li>
-            <li><a href="contact_us.html">Contact Us</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class="content">
-        <h2>Welcome to Connect.cek</h2>
-        <p>
-          A job portal connecting alumni, students, and faculties within College
-          of Engineering Karunagappally
-        </p>
-        <div class="tabs">
-          <div class="tab" data-content="login" id="login">Login</div>
-          <div class="tab active" data-content="signup">Signup</div>
-        </div>
-        <div class="tab-content" id="login">
-          <h3>Login</h3>
-        </div>
-        <div class="tab-content active" id="signup">
-          <h3>Signup</h3>
-          <div class="tabs headapp" id="are-you-tabs">
-            <div class="tab" data-content="alumni-tab">
-              <a href="alumini-form.html"> Alumni</a>
-            </div>
-            <div class="tab" data-content="student-tab">
-              <a href="student-form.html">Student</a>
-            </div>
-            <div class="tab" data-content="faculty-tab">
-              <a href="fa-form.html">Faculty</a>
-            </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mainabout.html">About</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="content">
+      <h2>Welcome to Connect.cek</h2>
+      <p>
+        A job portal connecting alumni, students, and faculties within College
+        of Engineering Karunagappally
+      </p>
+      <div class="tabs">
+        <div class="tab" data-content="login" id="login">Login</div>
+        <div class="tab active" data-content="signup">Signup</div>
+      </div>
+      <div class="tab-content" id="login">
+        <h3>Login</h3>
+      </div>
+      <div class="tab-content active" id="signup">
+        <h3>Signup</h3>
+        <div class="tabs headapp" id="are-you-tabs">
+          <div class="tab" data-content="alumni-tab">
+            <a href="alumini-form.html"> Alumni</a>
           </div>
-          <div class="tab-content" id="student-tab">
-            <!-- Student Signup Form Goes Here -->
-            <h3>Alumni Signup</h3>
-            <form id="student-form">
-              <!-- Student Signup Form Fields -->
-              <label for="student-name">Name:</label>
-              <input
-                type="text"
-                id="student-name"
-                name="student-name"
-                required
-              /><br />
-              <label for="student-email">College Email:</label>
-              <input
-                type="email"
-                id="student-email"
-                name="student-email"
-                required
-              /><br />
-              <label for="dob">Date of Birth:</label>
-              <input type="date" id="dob" name="dob" required />
-              <label for="phone">Phone Number:</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                placeholder="xxxxxxxxxx"
-                required
-              />
-              <label for="branch">Branch:</label>
-              <input type="text" id="branch" name="branch" required />
-              <label for="passout-year">Passout Year:</label>
-              <select id="passout-year" name="passout-year" required>
-                <option value="">Select Passout Year</option>
-                <option value="2022">2010</option>
-                <option value="2023">2011</option>
-                <option value="2024">2012</option>
-                <option value="2022">2013</option>
-                <option value="2023">2014</option>
-                <option value="2024">2015</option>
-                <option value="2022">2016</option>
-                <option value="2023">2017</option>
-                <option value="2024">2018</option>
-                <option value="2022">2019</option>
-                <option value="2023">2020</option>
-                <option value="2024">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <!-- Add more years as needed -->
-              </select>
-              <label for="linkedin-id">LinkedIn ID:</label>
-              <input type="text" id="linkedin-id" name="linkedin-id" />
-<label for="github-id">GitHub ID:</label>
-              <input type="text" id="github-id" name="github-id" />
-              <label for="field-of-interest">Field of Interest:</label>
-              <textarea
-                id="field-of-interest"
-                name="field-of-interest"
-                rows="4"
-              ></textarea>
-              <label for="password">Set Password:</label>
-              <input type="password" id="password" name="password" required />
-              <label for="confirm-password">Confirm Password:</label>
-              <input
-                type="password"
-                id="confirm-password"
-                name="confirm-password"
-                required
-              />
-              <input type="submit" value="Sign Up" />
-            </form>
+          <div class="tab" data-content="student-tab">
+            <a href="student-form.html">Student</a>
           </div>
+          <div class="tab" data-content="faculty-tab">
+            <a href="fa-form.html">Faculty</a>
+          </div>
+        </div>
+        <div class="tab-content" id="student-tab">
+          <!-- Student Signup Form Goes Here -->
+          <h3>Faculty Signup</h3>
+          <form id="student-form">
+            <!-- Student Signup Form Fields -->
+            <label for="student-name">Name:</label>
+            <input
+              type="text"
+              id="student-name"
+              name="student-name"
+              required
+            /><br />
+            <label for="student-email">College Email:</label>
+            <input
+              type="email"
+              id="student-email"
+              name="student-email"
+              required
+            /><br />
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required />
+            <label for="phone">Phone Number:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              placeholder="xxx-xxx-xxxx"
+              required
+            />
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" name="branch" required />
+            <label for="passout-year">Passout Year:</label>
+            <select id="passout-year" name="passout-year" required>
+              <option value="">Select Passout Year</option>
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+            </select>
+            <label for="linkedin-id">LinkedIn ID:</label>
+            <input type="url" id="linkedin-id" name="linkedin-id" placeholder="https://www.linkedin.com/in/yourprofile"/>
+            <label for="github-id">GitHub ID:</label>
+            <input type="url" id="github-id" name="github-id" placeholder="https://github.com/yourprofile"/>
+            <label for="field-of-interest">Field of Interest:</label>
+            <textarea
+              id="field-of-interest"
+              name="field-of-interest"
+              rows="4"
+              required
+            ></textarea>
+            <label for="password">Set Password:</label>
+            <input type="password" id="password" name="password" required minlength="6" />
+            <label for="confirm-password">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required minlength="6"
+            />
+            <input type="submit" value="Sign Up" />
+          </form>
         </div>
       </div>
     </div>
-    <!-- Include Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
-    <script type="module">
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-      apiKey: "AIzaSyCcqUzqkLvdfdCDAgYe6ugpom5Z3ULfMco",
-      authDomain: "connect-cek.firebaseapp.com",
-      databaseURL: "https://connect-cek-default-rtdb.firebaseio.com",
-      projectId: "connect-cek",
-      storageBucket: "connect-cek.appspot.com",
-      messagingSenderId: "21447682775",
-      appId: "1:21447682775:web:a280e1e65d64b1b8a69e92",
-      measurementId: "G-T09DQQLT9P",
+  </div>
+  <!-- Include Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js';
+    import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js';
+    import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js';
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDipLGkkWUsSJ5ZT6wKGRhk1Zk-SpnEAo8",
+      authDomain: "connect-cek-255d7.firebaseapp.com",
+      databaseURL: "https://connect-cek-255d7-default-rtdb.firebaseio.com",
+      projectId: "connect-cek-255d7",
+      storageBucket: "connect-cek-255d7.appspot.com",
+      messagingSenderId: "74457867270",
+      appId: "1:74457867270:web:2c2fe8efe69d3c0e7b4f87"
     };
 
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth(app);
 
-      // Reference to the Firebase database
-      const database = firebase.database();
+    const tabs = document.querySelectorAll(".tab");
+    const tabContents = document.querySelectorAll(".tab-content");
 
-      const tabs = document.querySelectorAll(".tab");
-      const tabContents = document.querySelectorAll(".tab-content");
-
-      // Add event listeners to tabs
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const target = tab.getAttribute("data-content");
-          if (target === "login") {
-            window.location.href = "index.html"; // Redirect to login.html on login tab click
-          } else {
-            tabContents.forEach((tabContent) => {
-              if (tabContent.id === target) {
-                tabContent.classList.add("active");
-              } else {
-                tabContent.classList.remove("active");
-              }
-            });
-            tabs.forEach((t) => {
-              if (t === tab) {
-                t.classList.add("active");
-              } else {
-                t.classList.remove("active");
-              }
-            });
-          }
-        });
+    // Add event listeners to tabs
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.getAttribute("data-content");
+        if (target === "login") {
+          window.location.href = "index.html"; // Redirect to login.html on login tab click
+        } else {
+          tabContents.forEach((tabContent) => {
+            if (tabContent.id === target) {
+              tabContent.classList.add("active");
+            } else {
+              tabContent.classList.remove("active");
+            }
+          });
+          tabs.forEach((t) => {
+            if (t === tab) {
+              t.classList.add("active");
+            } else {
+              t.classList.remove("active");
+            }
+          });
+        }
       });
+    });
 
-      // Form submission event listener
-      document
-        .getElementById("student-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form submission
+    // Form submission event listener
+    document
+      .getElementById("student-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
 
-          // Get form values
-          const name = document.getElementById("student-name").value;
-          const email = document.getElementById("student-email").value;
-          const dob = document.getElementById("dob").value;
-          const phone = document.getElementById("phone").value;
-          const branch = document.getElementById("branch").value;
-          const passoutYear = document.getElementById("passout-year").value;
-          const linkedinId = document.getElementById("linkedin-id").value;
-          const githubId = document.getElementById("github-id").value;
-          const fieldOfInterest =
-            document.getElementById("field-of-interest").value;
-          const password = document.getElementById("password").value;
-          const confirmPassword =
-            document.getElementById("confirm-password").value;
+        // Get form values
+        const name = document.getElementById("student-name").value.trim();
+        const email = document.getElementById("student-email").value.trim();
+        const dob = document.getElementById("dob").value;
+        const phone = document.getElementById("phone").value.trim();
+        const branch = document.getElementById("branch").value.trim();
+        const passoutYear = document.getElementById("passout-year").value;
+        const linkedinId = document.getElementById("linkedin-id").value.trim();
+        const githubId = document.getElementById("github-id").value.trim();
+        const fieldOfInterest =
+          document.getElementById("field-of-interest").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
 
-          // Check if passwords match
-          if (password !== confirmPassword) {
-            alert("Passwords do not match!");
-            return;
-          }
-// Push data to Firebase database
-          database
-            .ref("users")
-            .push({
+        // Check if passwords match
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
+        }
+
+        // Simple field validation
+        if (name === "" || email === "" || dob === "" || phone === "" || branch === "" || passoutYear === "" || fieldOfInterest === "" || password === "") {
+          alert("Please fill out all required fields.");
+          return;
+        }
+
+        // Validate phone number
+        const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+        if (!phonePattern.test(phone)) {
+          alert("Phone number must be in the format xxx-xxx-xxxx.");
+          return;
+        }
+
+        // Validate LinkedIn ID and GitHub ID for valid URLs
+        const linkedinPattern = /^https:\/\/www\.linkedin\.com\/in\/.+$/;
+        if (linkedinId && !linkedinPattern.test(linkedinId)) {
+          alert("Please enter a valid LinkedIn ID URL.");
+          return;
+        }
+
+        const githubPattern = /^https:\/\/github\.com\/.+$/;
+        if (githubId && !githubPattern.test(githubId)) {
+          alert("Please enter a valid GitHub ID URL.");
+          return;
+        }
+
+        // Create a new user with Firebase Authentication
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // User signed up successfully
+            const user = userCredential.user;
+            console.log('User signed up:', user.uid);
+
+            // Push user data to Firebase Realtime Database
+            push(ref(database, "users/" + user.uid), {
               name: name,
-              email: email,
               dob: dob,
               phone: phone,
               branch: branch,
@@ -215,17 +246,20 @@
               linkedinId: linkedinId,
               githubId: githubId,
               fieldOfInterest: fieldOfInterest,
-              password: password,
             })
             .then(() => {
-              alert("Student registered successfully!");
-              // Clear form after submission
-              document.getElementById("student-form").reset();
+              // Redirect to dashhome.html
+              window.location.href = "dashhome.html";
             })
             .catch((error) => {
-              console.error("Error adding student: ", error);
+              console.error("Error adding student data: ", error);
             });
-        });
-    </script>
-  </body>
+          })
+          .catch((error) => {
+            console.error("Error creating user: ", error);
+            alert("Error creating account. Please try again.");
+          });
+      });
+  </script>
+</body>
 </html>
